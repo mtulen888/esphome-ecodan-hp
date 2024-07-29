@@ -54,7 +54,7 @@ climate:
             case esphome::ecodan::Status::HpMode::HEAT_FLOW_TEMP:
             case esphome::ecodan::Status::HpMode::COOL_FLOW_TEMP:
             case esphome::ecodan::Status::HpMode::HEAT_COMPENSATION_CURVE:
-              return status.Zone1FlowTemperatureSetPoint;
+              return status.HpFeedTemperature;
             break;
             case esphome::ecodan::Status::HpMode::COOL_ROOM_TEMP:
             case esphome::ecodan::Status::HpMode::HEAT_ROOM_TEMP:
