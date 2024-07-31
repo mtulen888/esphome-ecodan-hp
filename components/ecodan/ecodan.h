@@ -48,7 +48,7 @@ namespace ecodan
         void set_dhw_force(bool on);
         void set_holiday(bool on);
         void set_power_mode(bool on);
-        void set_hp_mode(int mode);
+        void set_hp_mode(esphome::ecodan::Status::HpMode mode);
         void set_controller_mode(CONTROLLER_FLAG flag, bool on);
 
         const Status& get_status() const { return status; }
