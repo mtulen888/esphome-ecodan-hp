@@ -93,7 +93,12 @@ select:
       - ${eco}
     set_action:
       - lambda: |-
-          id(ecodan_instance).set_dhw_mode_cmd(x);
+          if (x == "${normal}") {
+            id(ecodan_instance).set_dhw_mode_cmd(esphome::ecodan::Status::DhwMode::NORMAL);
+          }
+          else if (x == "${eco}") {
+            id(ecodan_instance).set_dhw_mode_cmd(esphome::ecodan::Status::DhwMode::ECO);
+          }
 
 # diagnostics
 text_sensor:
