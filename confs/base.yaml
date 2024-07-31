@@ -152,15 +152,18 @@ text_sensor:
     status_dhw:
       id: status_dhw 
       name: ${status_dhw}
-      # on_value:
-      #   if:
-      #     condition:
-      #       - lambda: |-
-      #           return id(heatpump_select_dhw_mode).state != id(status_dhw).state && id(status_dhw).state != "Unknown";
-      #     then:
-      #       - select.set:
-      #           id: heatpump_select_dhw_mode
-      #           option: !lambda "return id(status_dhw).state;"
+      on_value:
+        if:
+          condition:
+            - lambda: |-
+                return id(heatpump_select_dhw_mode).state != id(status_dhw).state && id(status_dhw).state != "Unknown";
+                auto dhwmode = static_cast<uint8_t>(id(ecodan_instance).get_status().HotWaterMode);
+                auto index = id(heatpump_select_dhw_mode).active_index();
+                return (index.has_value() && index.value() != dhwmode);
+          then:
+            - select.set_index:
+                id: heatpump_select_dhw_mode
+                index: !lambda "return static_cast<uint8_t>(id(ecodan_instance).get_status().HotWaterMode);"
 
 
     status_heating_cooling:
