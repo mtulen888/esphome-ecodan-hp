@@ -196,14 +196,14 @@ namespace ecodan
 
         std::string dhw_status_as_string()
         {
-            switch (Operation)
-            {
-                case OperationMode::DHW_ON:
-                case OperationMode::LEGIONELLA_PREVENTION:
-                    break;
-                default:
-                    return std::string("Off");
-            }
+            // switch (Operation)
+            // {
+            //     case OperationMode::DHW_ON:
+            //     case OperationMode::LEGIONELLA_PREVENTION:
+            //         break;
+            //     default:
+            //         return std::string("Off");
+            // }
 
             switch (HotWaterMode)
             {
@@ -245,7 +245,7 @@ namespace ecodan
             Operation = static_cast<OperationMode>(mode);
         }
 
-        void set_dhw_mode(uint8_t mode)
+        void set_dhw_mode_status(uint8_t mode)
         {
             HotWaterMode = static_cast<DhwMode>(mode);
         }

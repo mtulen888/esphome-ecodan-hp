@@ -89,12 +89,11 @@ select:
     optimistic: true
     restore_value: true
     options:
-      - ${of}
       - ${normal}
       - ${eco}
     set_action:
       - lambda: |-
-          id(ecodan_instance).set_dhw_mode(x);
+          id(ecodan_instance).set_dhw_mode_cmd(x);
 
 # diagnostics
 text_sensor:

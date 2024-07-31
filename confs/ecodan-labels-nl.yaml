@@ -19,7 +19,6 @@ substitutions:
   status_in6_request: Status In6 thermostaat 2
   status_in5_request: Status In5 buiten thermostaat
   heatpump_select_dhw_mode: Set SWW modus
-  of: "Uit"
   normal: Normaal
   eco: Eco
   version: ESP versie

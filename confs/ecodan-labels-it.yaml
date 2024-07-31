@@ -19,7 +19,6 @@ substitutions:
   status_in6_request: Termost. Z2 (IN6)
   status_in5_request: Termost. Esterno (IN5)
   heatpump_select_dhw_mode: Modalità ACS
-  of: "Spento"
   normal: Normale
   eco: Eco
   version: ESP Versione

@@ -19,7 +19,6 @@ substitutions:
   status_in6_request: In6 Thermostat 2
   status_in5_request: In5 Outdoor Thermostat
   heatpump_select_dhw_mode: DHW Mode
-  of: "Off"
   normal: Normal
   eco: Eco
   version: ESP Version
